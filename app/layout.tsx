@@ -61,73 +61,50 @@ export default function RootLayout({
                 {/* Description no longer than 155 characters */}
                 <meta
                     name="description"
-                    content="NeuraTalk: Coded AI Chat Companion"
+                    content="TrueLens audits AI responses for Canadian regional blind spots — surfacing the programs and opportunities AI models consistently miss."
                 />
 
-                {/* NeuraTalk: Coded AI Chat Companion */}
                 <meta
                     name="product-name"
-                    content="NeuraTalk: Coded AI Chat Companion"
+                    content="TrueLens"
                 />
 
                 {/* Twitter Card data */}
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:site" content="@ui8" />
+                <meta name="twitter:site" content="@truelens" />
                 <meta
                     name="twitter:title"
-                    content="NeuraTalk: Coded AI Chat Companion"
+                    content="TrueLens — AI Blind Spot Auditor for Canada"
                 />
                 <meta
                     name="twitter:description"
-                    content="A powerful coded AI chat experience"
+                    content="TrueLens audits AI responses for Canadian regional blind spots — surfacing the programs and opportunities AI models consistently miss."
                 />
-                <meta name="twitter:creator" content="@ui8" />
-                {/* Twitter Summary card images must be at least 120x120px */}
-                <meta
-                    name="twitter:image"
-                    content="https://neuratalk-tau.vercel.app/twitter-card.png"
-                />
+                <meta name="twitter:creator" content="@truelens" />
 
-                {/* Open Graph data for Facebook */}
+                {/* Open Graph */}
                 <meta
                     property="og:title"
-                    content="NeuraTalk: Coded AI Chat Companion"
+                    content="TrueLens — AI Blind Spot Auditor for Canada"
                 />
-                <meta property="og:type" content="Article" />
-                <meta
-                    property="og:url"
-                    content="https://ui8.net/odyssey-agency-d2aaee/products/neuratalk-your-smart-ai-chat-companion-coded"
-                />
-                <meta
-                    property="og:image"
-                    content="https://neuratalk-tau.vercel.app/fb-og-image.png"
-                />
+                <meta property="og:type" content="website" />
                 <meta
                     property="og:description"
-                    content="A powerful coded AI chat experience"
+                    content="TrueLens audits AI responses for Canadian regional blind spots — surfacing the programs and opportunities AI models consistently miss."
                 />
                 <meta
                     property="og:site_name"
-                    content="NeuraTalk: Coded AI Chat Companion"
+                    content="TrueLens"
                 />
-                <meta property="fb:admins" content="132951670226590" />
 
                 {/* Open Graph data for LinkedIn */}
                 <meta
                     property="og:title"
-                    content="NeuraTalk: Coded AI Chat Companion"
-                />
-                <meta
-                    property="og:url"
-                    content="https://ui8.net/odyssey-agency-d2aaee/products/neuratalk-your-smart-ai-chat-companion-coded"
-                />
-                <meta
-                    property="og:image"
-                    content="https://neuratalk-tau.vercel.app/linkedin-og-image.png"
+                    content="TrueLens — AI Blind Spot Auditor for Canada"
                 />
                 <meta
                     property="og:description"
-                    content="A powerful coded AI chat experience"
+                    content="TrueLens audits AI responses for Canadian regional blind spots — surfacing the programs and opportunities AI models consistently miss."
                 />
 
                 {/* Open Graph data for Pinterest */}
