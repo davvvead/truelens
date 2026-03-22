@@ -96,7 +96,7 @@ const SubmitModal = ({ open, onClose }: Props) => {
                         </div>
                         <p className="text-p-sm text-sub-600">
                             Help close the visibility gap. Submit a verified
-                            regional program and we'll review it for inclusion.
+                            regional program and we&apos;ll review it for inclusion.
                         </p>
                     </div>
 
