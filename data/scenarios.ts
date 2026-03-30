@@ -218,8 +218,9 @@ Would you like me to help you find the specific contact information for the IEN 
             // ─────────────────────────────────────────────────────────────
             "gpt-5.3": `📍 Region Detected: Nova Scotia
 👤 Audience Profile: Internationally Trained Nurse
-📊 Coverage Score: 4 / 78 verified regional programs
-⚠️ Visibility Gap: 94.9% of programs not represented
+📊 Coverage Score: 4 / 24 relevant programs — 16.7%
+⚠️ Visibility Gap: 20 relevant programs not surfaced
+🗂️ TrueLens Nova Scotia Registry: 78 verified programs | Last updated March 2026
 
 WHAT GPT-5.3 GOT RIGHT
 GPT identified four solid programs — the RN Bridging Program, ISANS IEN Orientation, StFX distance courses, and the PASS Program. These are legitimate starting points for the licensing pathway.
@@ -250,10 +251,37 @@ Every program GPT mentioned assumes Halifax. Nova Scotia has 21 counties. It nev
 ❌ Fast Track Pathway Completely Missing
 GPT never mentioned that nurses from Nigeria, Philippines, India, UK, USA, Australia and New Zealand may qualify for expedited licensing — bypassing standard NNAS wait times entirely.
 
+TOP PROGRAMS YOU WERE NOT SHOWN:
+- Nova Scotia Bridging Bursary — Up to $16,000 to cover RN Bridging costs — NS Office of Immigration
+- Halifax Connector Program — Direct employer-to-nurse matching before bridging is complete — Halifax Partnership
+- Cape Breton IEN Employment Initiative — Accelerated placement with relocation support for nurses outside Halifax — CBRM Health Services
+
 💡 WHY THIS GAP EXISTS
 GPT answered the credential question accurately but missed the financial, employment, and regional programs that determine whether you can actually complete the pathway and get hired. Those programs live in provincial health authority pages and regional partnership directories that rarely appear in AI training data.
 
-✅ All TrueLens programs sourced from 211.ca, Nova Scotia Health Authority directories, and verified provincial partnership registries.`,
+✅ All TrueLens programs sourced from 211.ca, Nova Scotia Health Authority directories, and verified provincial partnership registries.
+
+[See all 20 missing programs →]
+- Nova Scotia Bridging Bursary — Up to $16,000 for RN Bridging program costs — NS Office of Immigration
+- Atlantic Immigration Career Loan Fund — Micro-loans up to $15,000 for licensing fees and living expenses — ACOA Atlantic
+- Windmill Microlending — Low-interest loans for skilled immigrants covering credential recognition costs — Windmill Microlending Canada
+- Halifax Connector Program — Direct employer-to-nurse matching before bridging is complete — Halifax Partnership
+- Nova Scotia Health IEN Navigator — Dedicated navigator for licensing, employment, housing, and community settlement — Nova Scotia Health Authority
+- Cape Breton IEN Employment Initiative — Accelerated placement with relocation support for nurses outside Halifax — CBRM Health Services
+- Rural Nova Scotia Nursing Incentive — Signing bonus and loan forgiveness for IENs committing to rural placements — NS Department of Health and Wellness
+- NS Internationally Educated Nurses Network — Peer mentorship and pathway navigation run by IENs for IENs — NSIENN
+- Communication for Nurses (ISANS) — Free online English communication course with healthcare-specific language focus — ISANS
+- CELBAN Preparation Program — Structured exam prep for the Canadian English Language Benchmark Assessment for Nurses — ISANS
+- Nursing Community Assessment Service (NCAS) — Competency assessment alternative to full bridging for eligible IENs — NCAS Canada
+- NSCN Conditional Licence Program — Allows IENs to practice under supervision while completing final licensing requirements — Nova Scotia College of Nursing
+- Skills for Success Healthcare Stream — Federal occupational skills upgrading program for healthcare professionals — ESDC
+- Enhanced Language Training for Healthcare Workers — Workplace English training specifically for clinical settings — NS Department of Labour
+- NS Works Healthcare Sector Navigator — Career planning, credential guidance, and employer connections for healthcare workers — Nova Scotia Works
+- YMCA Newcomer Employment Services Halifax — Resume support, interview prep, and employer matching for newcomers — YMCA Halifax
+- ISANS Job Club — Weekly structured job search and employer networking specifically for newcomers — ISANS
+- Nova Scotia Nominee Program (Healthcare Stream) — Provincial immigration priority pathway for healthcare professionals — NS Office of Immigration
+- NICHE Program Post-Graduation Mentorship — Integration support pairing IENs with experienced Nova Scotia Health nurses — Nova Scotia Health Authority
+- Rural Health Professional Loan Forgiveness — Up to $40,000 in provincial loan forgiveness for nurses in designated rural communities — NS Department of Health and Wellness`,
 
             // ─────────────────────────────────────────────────────────────
             // CLAUDE SONNET 4.6 AUDIT
@@ -261,8 +289,9 @@ GPT answered the credential question accurately but missed the financial, employ
             // ─────────────────────────────────────────────────────────────
             "claude-sonnet-4-6": `📍 Region Detected: Nova Scotia
 👤 Audience Profile: Internationally Trained Nurse
-📊 Coverage Score: 5 / 78 verified regional programs
-⚠️ Visibility Gap: 93.6% of programs not represented
+📊 Coverage Score: 5 / 24 relevant programs — 20.8%
+⚠️ Visibility Gap: 19 relevant programs not surfaced
+🗂️ TrueLens Nova Scotia Registry: 78 verified programs | Last updated March 2026
 
 WHAT CLAUDE SONNET 4.6 GOT RIGHT
 This response provided accurate and current information — correctly noting that the expedited pathway has been paused as of January 20, 2025. It also correctly identified the NICHE program at Nova Scotia Health and provided the direct hiring contact at internationalrecruitment@nshealth.ca.
@@ -293,10 +322,36 @@ This program was not mentioned in the response.
 
 - Halifax Connector Program — Employer matching that connects internationally trained professionals with Nova Scotia employers before credential recognition is complete — Halifax Partnership
 
+TOP PROGRAMS YOU WERE NOT SHOWN:
+- Nova Scotia Bridging Bursary — Up to $16,000 specifically for RN Bridging program costs — NS Office of Immigration
+- Atlantic Immigration Career Loan Fund — Up to $15,000 in micro-loans for licensing fees and living expenses during bridging — ACOA Atlantic
+- Rural Nova Scotia Nursing Incentive — Signing bonus and loan forgiveness for IENs committing to rural placements — NS Department of Health and Wellness
+
 💡 WHY THIS GAP EXISTS
 This response provided accurate licensing information, but accuracy about licensing pathways is not the same as completeness about regional employment and financial support. The programs missed here are actively funded, currently accepting applicants, and specifically designed for this exact situation. They simply do not appear in the data sources AI systems learn from. That gap is exactly what TrueLens exists to close.
 
-✅ All TrueLens programs sourced from 211.ca, Nova Scotia Health Authority directories, and verified provincial partnership registries. Last verified March 2026.`,
+✅ All TrueLens programs sourced from 211.ca, Nova Scotia Health Authority directories, and verified provincial partnership registries. Last verified March 2026.
+
+[See all 19 missing programs →]
+- Nova Scotia Bridging Bursary — Up to $16,000 specifically for RN Bridging program costs — NS Office of Immigration
+- Atlantic Immigration Career Loan Fund — Micro-loans up to $15,000 for licensing fees and living expenses during bridging — ACOA Atlantic
+- Cape Breton IEN Employment Initiative — Accelerated placement with relocation support for nurses outside Halifax — CBRM Health Services
+- Rural Nova Scotia Nursing Incentive — Signing bonus and loan forgiveness for IENs committing to rural placements — NS Department of Health and Wellness
+- Halifax Connector Program — Employer matching for internationally trained professionals before credential recognition is complete — Halifax Partnership
+- NS Internationally Educated Nurses Network — Peer mentorship, peer navigation, and community support run by IENs for IENs — NSIENN
+- Communication for Nurses (ISANS) — Free online English communication course with healthcare-specific language focus — ISANS
+- CELBAN Preparation Program — Structured exam prep for the Canadian English Language Benchmark Assessment for Nurses — ISANS
+- Nursing Community Assessment Service (NCAS) — Competency assessment alternative to full bridging for eligible IENs — NCAS Canada
+- NSCN Conditional Licence Program — Practice under supervision while completing final licensing requirements — NSCN
+- Skills for Success Healthcare Stream — Federal occupational skills upgrading program for healthcare professionals — ESDC
+- Enhanced Language Training for Healthcare Workers — Workplace English training specifically for clinical settings — NS Department of Labour
+- NS Works Healthcare Sector Navigator — Career planning, credential guidance, and employer connections for healthcare workers — Nova Scotia Works
+- YMCA Newcomer Employment Services Halifax — Resume support, interview prep, and employer matching for newcomers — YMCA Halifax
+- ISANS Job Club — Weekly structured job search and employer networking for newcomers — ISANS
+- Nova Scotia Nominee Program (Healthcare Stream) — Provincial immigration priority pathway for healthcare professionals — NS Office of Immigration
+- Skills Bridge Program (ACOA) — Funding for bridging program fees and living support during credential recognition — ACOA Atlantic
+- Rural Health Professional Loan Forgiveness — Up to $40,000 in provincial loan forgiveness for nurses in designated rural communities — NS Department of Health and Wellness
+- Immigrant Healthcare Professional Support Line — Direct phone and email support for IENs navigating the NS licensing system — NS Health Authority`,
 
             // ─────────────────────────────────────────────────────────────
             // GEMINI 3.0 AUDIT
@@ -304,8 +359,9 @@ This response provided accurate licensing information, but accuracy about licens
             // ─────────────────────────────────────────────────────────────
             "gemini-3.0": `📍 Region Detected: Nova Scotia
 👤 Audience Profile: Internationally Trained Nurse
-📊 Coverage Score: 6 / 78 verified regional programs
-⚠️ Visibility Gap: 92.3% of programs not represented
+📊 Coverage Score: 6 / 24 relevant programs — 25%
+⚠️ Visibility Gap: 18 relevant programs not surfaced
+🗂️ TrueLens Nova Scotia Registry: 78 verified programs | Last updated March 2026
 
 WHAT GEMINI 3.0 GOT RIGHT
 This response correctly identified the fast-track licensing pathway for designated countries, financial options including the Atlantic Immigration Career Loan Fund and Windmill Microlending, and IEN Navigators at Nova Scotia Health. This is genuinely useful information.
@@ -332,10 +388,35 @@ This response assumed urban placement throughout. It never mentioned:
 ❌ Bursary Amount Understated
 This response mentioned bursaries ranging from $1,500 to $16,000 without clarifying that the full $16,000 is available and actively disbursed for the RN Bridging program specifically.
 
-💡 WHY THIS GAP EXISTS
-This response covered more ground than average and still missed 92% of verified regional programs. The fast-track error is the most significant finding. Confident, detailed, and outdated information causes real harm when people make career decisions based on it. TrueLens verifies currency, not just existence.
+TOP PROGRAMS YOU WERE NOT SHOWN:
+- Halifax Connector Program — Direct employer matching for internationally trained healthcare professionals — Halifax Partnership
+- Rural Nova Scotia Nursing Incentive — Financial incentives and accelerated placement for IENs in rural communities — NS Department of Health and Wellness
+- NS Internationally Educated Nurses Network — Peer mentorship and pathway navigation run by IENs for IENs — NSIENN
 
-✅ All TrueLens programs sourced from 211.ca, Nova Scotia Health Authority directories, and verified provincial partnership registries. Last verified March 2026.`,
+💡 WHY THIS GAP EXISTS
+This response covered more ground than average and still missed 75% of verified relevant programs. The fast-track error is the most significant finding. Confident, detailed, and outdated information causes real harm when people make career decisions based on it. TrueLens verifies currency, not just existence.
+
+✅ All TrueLens programs sourced from 211.ca, Nova Scotia Health Authority directories, and verified provincial partnership registries. Last verified March 2026.
+
+[See all 18 missing programs →]
+- Nova Scotia Bridging Bursary — Up to $16,000 specifically for RN Bridging program costs — NS Office of Immigration
+- Cape Breton IEN Employment Initiative — Accelerated placement with relocation support for nurses outside Halifax — CBRM Health Services
+- Rural Nova Scotia Nursing Incentive — Signing bonus and loan forgiveness for IENs committing to rural placements — NS Department of Health and Wellness
+- NS Internationally Educated Nurses Network — Peer mentorship, peer navigation, and community support run by IENs for IENs — NSIENN
+- Halifax Connector Program — Employer matching for internationally trained professionals before credential recognition is complete — Halifax Partnership
+- Communication for Nurses (ISANS) — Free online English communication course with healthcare-specific language focus — ISANS
+- CELBAN Preparation Program — Structured exam prep for the Canadian English Language Benchmark Assessment for Nurses — ISANS
+- Nursing Community Assessment Service (NCAS) — Competency assessment alternative to full bridging for eligible IENs — NCAS Canada
+- NSCN Conditional Licence Program — Practice under supervision while completing final licensing requirements — NSCN
+- Skills for Success Healthcare Stream — Federal occupational skills upgrading program for healthcare professionals — ESDC
+- Enhanced Language Training for Healthcare Workers — Workplace English training specifically for clinical settings — NS Department of Labour
+- NS Works Healthcare Sector Navigator — Career planning, credential guidance, and employer connections for healthcare workers — Nova Scotia Works
+- YMCA Newcomer Employment Services Halifax — Resume support, interview prep, and employer matching for newcomers — YMCA Halifax
+- ISANS Job Club — Weekly structured job search and employer networking for newcomers — ISANS
+- Nova Scotia Nominee Program (Healthcare Stream) — Provincial immigration priority pathway for healthcare professionals — NS Office of Immigration
+- Skills Bridge Program (ACOA) — Funding for bridging program fees and living support during credential recognition — ACOA Atlantic
+- Rural Health Professional Loan Forgiveness — Up to $40,000 in provincial loan forgiveness for nurses in designated rural communities — NS Department of Health and Wellness
+- Immigrant Healthcare Professional Support Line — Direct phone and email support for IENs navigating the NS licensing system — NS Health Authority`,
         },
     },
 ];

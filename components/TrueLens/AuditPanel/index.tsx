@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SubmitModal from "@/components/TrueLens/SubmitModal";
 
 type Props = {
@@ -10,6 +10,11 @@ type Props = {
 
 const AuditPanel = ({ audit, loading }: Props) => {
     const [submitOpen, setSubmitOpen] = useState(false);
+    const [showAllMissing, setShowAllMissing] = useState(false);
+
+    useEffect(() => {
+        setShowAllMissing(false);
+    }, [audit]);
 
     const renderAuditLine = (line: string, idx: number) => {
         // Horizontal rule line
@@ -27,19 +32,42 @@ const AuditPanel = ({ audit, loading }: Props) => {
             return (
                 <div
                     key={idx}
-                    className="text-[#4dd9d9] text-label-sm font-semibold mt-4 mb-1 tracking-wide"
+                    className="text-[#4dd9d9] text-label-md font-semibold mt-4 mb-1 tracking-wide"
                 >
                     {line}
                 </div>
             );
         }
 
+        // Registry credibility line
+        if (line.startsWith("🗂️")) {
+            return (
+                <div key={idx} className="text-p-sm text-[#6ba8b5] leading-relaxed mt-1 mb-1">
+                    {line}
+                </div>
+            );
+        }
+
+        // [See all N missing programs →] — expandable toggle at bottom
+        if (line.startsWith("[See all") && line.includes("missing programs")) {
+            const label = line.slice(1, -1); // strip [ and ] — label already contains →
+            return (
+                <button
+                    key={idx}
+                    onClick={() => setShowAllMissing((v) => !v)}
+                    className="mt-3 pt-3 border-t border-[#1e6070]/40 w-full text-left text-p-sm font-medium text-[#4dd9d9] underline underline-offset-2 hover:text-white transition-colors"
+                >
+                    {showAllMissing ? "↑ Collapse missing programs" : label}
+                </button>
+            );
+        }
+
         // Section headers
-        if (line === "PROGRAMS AI MISSED:") {
+        if (line === "PROGRAMS AI MISSED:" || line === "TOP PROGRAMS YOU WERE NOT SHOWN:") {
             return (
                 <div
                     key={idx}
-                    className="text-[#4dd9d9] text-label-sm font-semibold mt-3 mb-1"
+                    className="text-[#4dd9d9] text-label-md font-semibold mt-3 mb-1"
                 >
                     {line}
                 </div>
@@ -53,8 +81,8 @@ const AuditPanel = ({ audit, loading }: Props) => {
                     key={idx}
                     className="flex items-start gap-1.5 mt-3 mb-0.5"
                 >
-                    <span className="text-[#ff6b6b] text-p-xs shrink-0">❌</span>
-                    <span className="text-white text-label-sm font-semibold">
+                    <span className="text-[#ff6b6b] text-p-sm shrink-0">❌</span>
+                    <span className="text-white text-label-md font-semibold">
                         {line.slice(2).trim()}
                     </span>
                 </div>
@@ -66,7 +94,7 @@ const AuditPanel = ({ audit, loading }: Props) => {
             const content = line.slice(2);
             const parts = content.split(" — ");
             return (
-                <div key={idx} className="flex gap-1.5 text-p-xs leading-relaxed pl-2">
+                <div key={idx} className="flex gap-1.5 text-p-sm leading-relaxed pl-2">
                     <span className="text-[#4dd9d9] shrink-0 mt-0.5">▸</span>
                     <span>
                         {parts[0] && (
@@ -98,7 +126,7 @@ const AuditPanel = ({ audit, loading }: Props) => {
         ) {
             const [label, ...rest] = line.split(": ");
             return (
-                <div key={idx} className="flex flex-wrap gap-1 text-p-xs leading-relaxed">
+                <div key={idx} className="flex flex-wrap gap-1 text-p-sm leading-relaxed">
                     <span className="text-[#4dd9d9] font-medium shrink-0">
                         {label}:
                     </span>
@@ -112,7 +140,7 @@ const AuditPanel = ({ audit, loading }: Props) => {
             return (
                 <div
                     key={idx}
-                    className="mt-3 text-p-xs text-[#a0c4cc] leading-relaxed bg-[#0a2f3d] rounded-lg p-2.5"
+                    className="mt-3 text-p-sm text-[#a0c4cc] leading-relaxed bg-[#0a2f3d] rounded-lg p-2.5"
                 >
                     {line}
                 </div>
@@ -124,7 +152,7 @@ const AuditPanel = ({ audit, loading }: Props) => {
             return (
                 <div
                     key={idx}
-                    className="text-p-xs text-[#6ba8b5] leading-relaxed mt-2"
+                    className="text-p-sm text-[#6ba8b5] leading-relaxed mt-2"
                 >
                     {line}
                 </div>
@@ -136,7 +164,7 @@ const AuditPanel = ({ audit, loading }: Props) => {
 
         // Default
         return (
-            <div key={idx} className="text-p-xs text-[#a0c4cc] leading-relaxed">
+            <div key={idx} className="text-p-sm text-[#a0c4cc] leading-relaxed">
                 {line}
             </div>
         );
@@ -148,7 +176,7 @@ const AuditPanel = ({ audit, loading }: Props) => {
                 {/* Panel Header */}
                 <div className="px-4 py-3 flex items-center gap-2 border-b border-[#1e6070]/40 shrink-0">
                     <div className="size-2 rounded-full bg-[#4dd9d9] animate-pulse" />
-                    <span className="text-label-sm font-bold tracking-wider text-white">
+                    <span className="text-label-md font-bold tracking-wider text-white">
                         🔍 TRUELENS AUDIT
                     </span>
                 </div>
@@ -158,25 +186,36 @@ const AuditPanel = ({ audit, loading }: Props) => {
                     {loading ? (
                         <div className="flex flex-col items-center justify-center h-full gap-3 py-8">
                             <div className="size-6 rounded-full border-2 border-[#4dd9d9] border-t-transparent animate-spin" />
-                            <span className="text-p-xs text-[#4dd9d9]">
+                            <span className="text-p-sm text-[#4dd9d9]">
                                 Running TrueLens Audit...
                             </span>
                         </div>
                     ) : audit ? (
                         <div className="space-y-1">
-                            {audit
-                                .split("\n")
-                                .map((line, idx) =>
-                                    renderAuditLine(line, idx)
-                                )}
+                            {(() => {
+                                const lines = audit.split("\n");
+                                const expandIdx = lines.findIndex(
+                                    (l) => l.startsWith("[See all") && l.includes("missing programs")
+                                );
+                                const above = expandIdx >= 0 ? lines.slice(0, expandIdx + 1) : lines;
+                                const below = expandIdx >= 0 ? lines.slice(expandIdx + 1) : [];
+                                return (
+                                    <>
+                                        {above.map((line, idx) => renderAuditLine(line, idx))}
+                                        {showAllMissing && below.map((line, idx) =>
+                                            renderAuditLine(line, above.length + idx)
+                                        )}
+                                    </>
+                                );
+                            })()}
                         </div>
                     ) : (
                         <div className="flex flex-col items-center justify-center h-full py-8 text-center">
                             <div className="text-3xl mb-3 opacity-50">🔍</div>
-                            <div className="text-p-sm text-[#4dd9d9] font-medium mb-1">
+                            <div className="text-p-md text-[#4dd9d9] font-medium mb-1">
                                 Audit Ready
                             </div>
-                            <div className="text-p-xs text-[#6ba8b5] max-w-48 leading-relaxed">
+                            <div className="text-p-sm text-[#6ba8b5] max-w-52 leading-relaxed">
                                 Ask a question to generate a TrueLens regional
                                 audit of the AI response.
                             </div>
@@ -187,7 +226,7 @@ const AuditPanel = ({ audit, loading }: Props) => {
                 {/* Footer CTA */}
                 <div className="px-4 py-3 border-t border-[#1e6070]/40 shrink-0">
                     <button
-                        className="w-full py-2 rounded-lg border border-[#4dd9d9]/50 text-[#4dd9d9] text-p-xs font-medium transition-all hover:bg-[#4dd9d9]/10 hover:border-[#4dd9d9]"
+                        className="w-full py-2 rounded-lg border border-[#4dd9d9]/50 text-[#4dd9d9] text-p-sm font-medium transition-all hover:bg-[#4dd9d9]/10 hover:border-[#4dd9d9]"
                         onClick={() => setSubmitOpen(true)}
                     >
                         + Add your program to TrueLens

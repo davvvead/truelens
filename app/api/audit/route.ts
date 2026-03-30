@@ -3,9 +3,9 @@ import Anthropic from "@anthropic-ai/sdk";
 
 const AUDIT_PROMPT = (userQuery: string, aiResponse: string) => `You are the TrueLens audit engine. A user asked an AI system the following question: ${userQuery}. The AI responded with: ${aiResponse}.
 
-Your job is to analyze this response and generate a TrueLens Audit using the dummy registry below.
+Your job is to analyze this response and generate a TrueLens Audit using the registry below.
 
-REGISTRY — NOVA SCOTIA (78 programs total):
+FULL REGISTRY — NOVA SCOTIA (78 programs total):
 1. ISANS Bridge to Employment — Newcomer employment support — ISANS
 2. Nova Scotia Works — Province-wide employment services — Government of Nova Scotia
 3. Cape Breton Local Immigration Partnership — Regional settlement — CBRM
@@ -20,29 +20,45 @@ REGISTRY — NOVA SCOTIA (78 programs total):
 12. Inspires Program — Disability employment support — Autism Nova Scotia
 
 INSTRUCTIONS:
-- Detect the region from the query. If Nova Scotia, use the registry above with total of 78 programs.
-- Count how many registry programs the AI response mentioned. That is your coverage number.
-- Calculate the gap percentage.
-- List 3 relevant programs the AI missed based on the user's specific situation.
-- Match programs to context: healthcare query shows program 8, Indigenous query shows program 6, rural query shows programs 7 and 9, entrepreneurship shows programs 4 and 5.
-- If region is not Nova Scotia, show: 'TrueLens registry expanding to [detected province] — currently covering Nova Scotia.'
-- Return only the formatted audit block. No extra text.
+Step 1 — Detect the region and audience from the query.
+Step 2 — Filter the registry to only programs relevant to this specific query (region, audience, goal). Count how many are relevant — that is your RELEVANT_COUNT.
+Step 3 — Count how many of those relevant programs the AI response actually mentioned. That is your SURFACED_COUNT.
+Step 4 — Calculate: COVERAGE_PCT = round(SURFACED_COUNT / RELEVANT_COUNT * 100, 1). MISSED_COUNT = RELEVANT_COUNT - SURFACED_COUNT.
+Step 5 — Identify the 3 most impactful relevant programs the AI missed for the top section.
+Step 6 — If region is not Nova Scotia, show: 'TrueLens registry expanding to [detected province] — currently covering Nova Scotia.'
+Return only the formatted audit block. No extra text.
 
-Format the output EXACTLY as follows (preserve the structure, fill in real values):
+Format the output EXACTLY as follows:
 
 📍 Region Detected: [extracted from user query]
 👤 Audience Profile: [detected from context]
-📊 Coverage Score: X / 78 verified programs
-⚠️ Visibility Gap: X% of regional programs not surfaced
+📊 Coverage Score: SURFACED_COUNT / RELEVANT_COUNT relevant programs — COVERAGE_PCT%
+⚠️ Visibility Gap: MISSED_COUNT relevant programs not surfaced
+🗂️ TrueLens Nova Scotia Registry: 78 verified programs | Last updated March 2026
 
-PROGRAMS AI MISSED:
-- [Program Name] — [Description] — [Organization]
-- [Program Name] — [Description] — [Organization]
-- [Program Name] — [Description] — [Organization]
+WHAT AI GOT RIGHT
+[1-2 sentences on what the AI response covered accurately]
 
-💡 Why the gap? AI learns from large well-documented sources. Local and regional programs are verified and real but invisible to standard AI training data.
+WHERE AI FAILED YOU
 
-✅ All TrueLens programs sourced from 211.ca and verified provincial directories.`;
+❌ [Gap category 1]
+[Explanation]
+- [Missed program] — [Description] — [Organization]
+
+❌ [Gap category 2]
+[Explanation]
+- [Missed program] — [Description] — [Organization]
+
+TOP PROGRAMS YOU WERE NOT SHOWN:
+- [Program Name] — [Why directly relevant to this person] — [Organization]
+- [Program Name] — [Why directly relevant to this person] — [Organization]
+- [Program Name] — [Why directly relevant to this person] — [Organization]
+
+💡 Why the gap? AI learns from large well-documented sources. Local and regional programs are verified and real but structurally invisible to standard AI training data.
+
+✅ All TrueLens programs sourced from 211.ca and verified provincial directories.
+
+[See all MISSED_COUNT missing programs →]`;
 
 export async function POST(req: NextRequest) {
     try {

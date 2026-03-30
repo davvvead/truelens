@@ -50,15 +50,16 @@ This will trigger a full simulated response with a TrueLens audit showing what e
 
 const FALLBACK_AUDIT = `📍 Region Detected: Not determined
 👤 Audience Profile: General
-📊 Coverage Score: 0 / 78 verified programs
-⚠️ Visibility Gap: 100% of regional programs not surfaced
+📊 Coverage Score: 0 / 0 relevant programs — 0%
+⚠️ Visibility Gap: Region or audience not detected
+🗂️ TrueLens Nova Scotia Registry: 78 verified programs | Last updated March 2026
 
 PROGRAMS AI MISSED:
 - Nova Scotia Works — Province-wide employment services — Government of Nova Scotia
 - ISANS Bridge to Employment — Newcomer employment support — ISANS
 - Futurpreneur Canada Atlantic — Startup funding ages 18-39 — Futurpreneur
 
-💡 Why the gap? AI learns from large well-documented sources. Local and regional programs are verified and real but invisible to standard AI training data.
+💡 Why the gap? AI learns from large well-documented sources. Local and regional programs are verified and real but structurally invisible to standard AI training data.
 
 ✅ All TrueLens programs sourced from 211.ca and verified provincial directories.`;
 
